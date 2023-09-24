@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    environment {
+        // Use the NODE_PATH global environment variable to set Node.js and npm paths
+        PATH = "${NODE_PATH}:${PATH}"
+    }
     stages {       
         stage('Build') {
             steps {
